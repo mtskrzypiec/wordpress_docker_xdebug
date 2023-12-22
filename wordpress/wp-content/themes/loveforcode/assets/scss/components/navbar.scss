@@ -1,0 +1,80 @@
+.menu-box {
+  height: 100px;
+  padding-left: clamp(24px,1.7032rem + 1.9355vw,48px);
+  padding-right: clamp(24px,1.7032rem + 1.9355vw,48px);
+  align-items: center;
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -.02em;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .sign-in {
+    font-weight: 700;
+    margin-top: 0.40em;
+    margin-right: 15px;
+  }
+
+  .controls-sec {
+    justify-content: flex-end;
+  }
+
+  .search-button {
+    margin-top: 0.30em;
+    margin-right: 25px;
+  }
+
+  .subscribe {
+    font-weight: 700;
+    color: #fff;
+    background: #000;
+    gap: 0.4em;
+    justify-content: center;
+    letter-spacing: inherit;
+    line-height: 1;
+    padding: calc(0.75em*var(--multiplier, 1)) calc(1.15em*var(--multiplier, 1));
+    border-radius: 100px;
+  }
+
+  .nav {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    margin-top: 4px;
+
+
+    align-items: center;
+    gap: 32px;
+
+    font-size: 1rem;
+
+    li {
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  button {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--darker-gray-color);
+    cursor: pointer;
+    display: inline-flex;
+    height: 30px;
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    width: 30px;
+  }
+}
+
+a {
+  color: #15171a;
+  text-decoration: none;
+}

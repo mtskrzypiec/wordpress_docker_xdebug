@@ -1,0 +1,19 @@
+.footer-links {
+  padding-top: clamp(5rem,4vw + 5.18rem,8rem);
+  ul {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    li {
+      margin: 0 0 0 5px
+    }
+  }
+}
+
+.footer-footer {
+  padding-bottom: clamp(5rem,4vw + 5.18rem,8rem);
+}
+
+.center-text {
+  text-align: center;
+}
