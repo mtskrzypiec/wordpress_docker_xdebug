@@ -35,10 +35,11 @@ get_header();
                         <li>
                             <div class="row">
                                 <div class="col-md-7 post_desc">
-                                    <h2 class="main_page_post_title"><?php echo $post->post_title ?></h2>
-                                    <?php // TODO: ADD ACF FOR TIME READING  ?>
-                                    <p class="post_info">Aug 28, 2022 1 min read</p>
-
+                                    <a href="<?php echo get_permalink($post) ?>">
+                                        <h2 class="main_page_post_title"><?php echo $post->post_title ?></h2>
+                                        <?php // TODO: ADD ACF FOR TIME READING  ?>
+                                        <p class="post_info">Aug 28, 2022 1 min read</p>
+                                    </a>
                                 </div>
                                 <div class="col-md-5">
                                     <figure class="post_image">
@@ -50,8 +51,6 @@ get_header();
                         <?php
                     }
                     ?>
-
-
                 </ul>
             </div>
         </div>
