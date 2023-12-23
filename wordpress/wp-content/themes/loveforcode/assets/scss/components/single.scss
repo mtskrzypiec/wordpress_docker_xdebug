@@ -1,0 +1,52 @@
+.heading-size {
+  font-size: clamp(3rem,2vw + 2rem,7.2rem);
+  font-weight: 800;
+  grid-column: 1/span 9;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+.post_main_image {
+  flex: 1;
+  position: relative;
+
+  img {
+    height: 100%;
+    inset: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+}
+
+.post-single-content {
+  margin-top: 3em !important;
+  font-family: Manrope,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+
+  h2 {
+    font-weight: 800;
+    margin-top: 1em;
+  }
+
+  p {
+    font-size: clamp(0.8rem,0.38vw + 0.8rem,2rem);
+  }
+}
+
+.post-single-sitebar {
+  flex: 0 0 auto; width: 100%;
+  margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 23%;
+    margin: 0;
+  }
+}
