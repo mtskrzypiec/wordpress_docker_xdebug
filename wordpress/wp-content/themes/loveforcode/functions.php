@@ -37,9 +37,8 @@ function enqueue_webpack_scripts(): void {
     wp_enqueue_style( 'main_css', $cssFileURI );
 
     $jsFilePath = glob( get_template_directory() . '/assets/js/build/main.min.*.js' );
-    $jsFileURI = get_template_directory_uri() . '/js/build/' . basename($jsFilePath[0]);
-    wp_enqueue_script( 'main_js', $jsFileURI , null , null , true );
-
+    $jsFileURI = get_template_directory_uri() . '/assets/js/build/' . basename($jsFilePath[0]);
+    wp_enqueue_script( 'main_js', $jsFileURI);
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_webpack_scripts' );
@@ -69,3 +68,18 @@ function custom_template_directory( string $template ): string {
     return $template;
 }
 add_filter( 'page_template', 'custom_template_directory' );
+
+function enqueue_block_assets() {
+    wp_enqueue_script(
+        'your-plugin-script',
+        plugins_url('your-plugin.js', __FILE__),
+        array('wp-blocks', 'wp-element')
+    );
+
+    wp_enqueue_style(
+        'your-plugin-style',
+        plugins_url('your-plugin.css', __FILE__),
+        array('wp-edit-blocks')
+    );
+}
+add_action('enqueue_block_editor_assets', 'enqueue_block_assets');

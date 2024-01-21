@@ -20,5 +20,6 @@ declare(strict_types=1);
         </div>
     </div>
 </footer>
+<?php wp_footer(); ?>
 </body>
 </html>

@@ -6,7 +6,6 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
-
 $post = get_post();
 the_post();
 get_header(); ?>
@@ -26,11 +25,15 @@ get_header(); ?>
 
      <div class="row post-single-content">
          <div class="post-single-sitebar">
-             <?php
-                $authorName = get_the_author();
-                $avatar = get_the_author_meta();
-             ?>
-             <p><?php echo $authorName?></p>
+             <div style="position: sticky; top: 35px">
+                 <?php
+                 $author = get_user_by('id', $post->post_author);
+                 $avatar = get_avatar($author->ID, args: ['class' => ["rounded-circle"]]);
+                 ?>
+                 <?php echo $avatar ?>
+                 <p class="author_name"><?php echo $author->first_name . ' ' . $author->last_name ?></p>
+                 <p class="post_date"><?php echo date("d/m/Y", strtotime($post->post_date)) ?></p>
+             </div>
          </div>
          <div class="col-md-7">
              <?php

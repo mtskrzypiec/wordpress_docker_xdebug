@@ -43,7 +43,7 @@ get_header();
                                 </div>
                                 <div class="col-md-5">
                                     <figure class="post_image">
-                                        <img src="https://images.unsplash.com/photo-1619118884592-11b151f1ae11" alt="">
+                                        <img src="<?php echo get_the_post_thumbnail($post) ? get_the_post_thumbnail($post) : "https://images.unsplash.com/photo-1619118884592-11b151f1ae11" ?>" alt="">
                                     </figure>
                                 </div>
                             </div>

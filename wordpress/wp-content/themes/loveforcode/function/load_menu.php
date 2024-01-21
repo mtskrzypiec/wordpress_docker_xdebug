@@ -20,9 +20,9 @@ function getMenu(string $menuName): array
 
     foreach ($menu as $childKey => $menuItem) {
         if ($menuItem->menu_item_parent) {
-            foreach ($menu as $key => $parrentItem) {
-                if ($menuItem->menu_item_parent == $parrentItem->object_id) {
-                    $parrentItem->children[] = $menuItem;
+            foreach ($menu as $key => $parentItem) {
+                if ($menuItem->menu_item_parent == $parentItem->object_id) {
+                    $parentItem->children[] = $menuItem;
                 }
             }
 
@@ -39,18 +39,9 @@ function getMenuList(string $menuName): string
 
     ob_start();
     foreach ($menu as $menuItem) {
-        if (count($menuItem->children) > 0) {
-            ?>
-            <li class="d-flex menu-dropdown-trigger">
-                <?php echo __($menuItem->post_title) ?>
-                <img src="<?php echo getImage('menu/dropdown.svg') ?>" alt="Dropdown">
-            </li>
-            <?php
-        } else {
-            ?>
-            <li><?php echo __($menuItem->post_title) ?></li>
-            <?php
-        }
+        ?>
+        <li><?php echo __($menuItem->post_title) ?></li>
+        <?php
     }
 
     return ob_get_clean();
